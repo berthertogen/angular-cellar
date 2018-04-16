@@ -26,6 +26,7 @@
 var glob = require("glob");
 
 var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // use resolve() to normalize paths between unix/windows environments
 var path = require('path');
@@ -58,8 +59,8 @@ module.exports = {
     },
 
     output: {
-        path: resolve('./angular-cellar/dist/'),
-        filename: '[name].js'
+        path: resolve('./angular-cellar'),
+        filename: '[name].[chunkhash].js'
     },
 
     optimization: {
@@ -74,6 +75,23 @@ module.exports = {
             }
         }
     },
+
+    module: {
+        rules: [
+          {
+            test: /\.ts$/,
+            use: 'ts-loader',
+            exclude: /node_modules/
+          }
+        ],
+      },
+    
+      plugins: [
+        new HtmlWebpackPlugin({
+            template: 'template/index.ejs',
+        })
+      ]
+    
 
     // module: {
     //     rules: [

@@ -1,12 +1,14 @@
 'use strict';
 
+import { BookListCtrl } from "./books/bookCtrl.ts";
+
 var angular = require('angular');
 var ngRoute = require("angular-route");
 
 angular.module('angularUpgrade', ['ngRoute']);
 
 angular.module('angularUpgrade').component('wines', { templateUrl:'js/wines/wine-list.html', controller: require('./wines/wineCtrl')});
-angular.module('angularUpgrade').component('books', { templateUrl:'js/books/book-list.html', controller: require('./books/bookCtrl')});
+angular.module('angularUpgrade').component('books', { templateUrl:'js/books/book-list.html', controller: BookListCtrl});
 
 angular.module('angularUpgrade').config(function($routeProvider, $locationProvider) {
   // $routeProvider.when('/books', {templateUrl:'js/books/book-list.html', controller:'BookListCtrl'});

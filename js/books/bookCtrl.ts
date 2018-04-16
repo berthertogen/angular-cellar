@@ -1,7 +1,7 @@
 'use strict';
 
-function BookListCtrl() {
-    this.books = [{
+export class BookListCtrl {
+    books = [{
         id: 1,
         name: 'Book 1'
     }, {
@@ -10,4 +10,4 @@ function BookListCtrl() {
     }];
 }
 
-module.exports = BookListCtrl;
+// module.exports = BookListCtrl;

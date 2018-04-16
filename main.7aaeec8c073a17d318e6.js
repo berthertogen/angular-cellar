@@ -128,7 +128,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push([6,0]);
+/******/ 	deferredModules.push([2,0]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -137,22 +137,51 @@
 /* 0 */,
 /* 1 */,
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./js/books/bookCtrl.ts
+
+var BookListCtrl = /** @class */ (function () {
+    function BookListCtrl() {
+        this.books = [{
+                id: 1,
+                name: 'Book 1'
+            }, {
+                id: 2,
+                name: 'Book 2'
+            }];
+    }
+    return BookListCtrl;
+}());
 
 
-function BookListCtrl() {
-    this.books = [{
-        id: 1,
-        name: 'Book 1'
-    }, {
-        id: 2,
-        name: 'Book 2'
-    }];
-}
+// CONCATENATED MODULE: ./js/index.js
 
-module.exports = BookListCtrl;
+
+
+
+var angular = __webpack_require__(1);
+var ngRoute = __webpack_require__(0);
+
+angular.module('angularUpgrade', ['ngRoute']);
+
+angular.module('angularUpgrade').component('wines', { templateUrl:'js/wines/wine-list.html', controller: __webpack_require__(3)});
+angular.module('angularUpgrade').component('books', { templateUrl:'js/books/book-list.html', controller: BookListCtrl});
+
+angular.module('angularUpgrade').config(function($routeProvider, $locationProvider) {
+  // $routeProvider.when('/books', {templateUrl:'js/books/book-list.html', controller:'BookListCtrl'});
+  // $routeProvider.when('/wines', {templateUrl:'js/wines/wine-list.html', controller:'WineListCtrl'});
+  $routeProvider.when('/wines', {template: '<wines></wines>'});
+  $routeProvider.when('/books', {template: '<books></books>'});
+  $routeProvider.otherwise({redirectTo:'/wines'});
+
+    // // configure html5 to get links working on jsfiddle
+  $locationProvider.html5Mode(true);
+});
+
 
 /***/ }),
 /* 3 */
@@ -172,35 +201,6 @@ function WineListCtrl() {
 }
 
 module.exports = WineListCtrl;
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var angular = __webpack_require__(1);
-var ngRoute = __webpack_require__(0);
-
-angular.module('angularUpgrade', ['ngRoute']);
-
-angular.module('angularUpgrade').component('wines', { templateUrl:'js/wines/wine-list.html', controller: __webpack_require__(3)});
-angular.module('angularUpgrade').component('books', { templateUrl:'js/books/book-list.html', controller: __webpack_require__(2)});
-
-angular.module('angularUpgrade').config(function($routeProvider, $locationProvider) {
-  // $routeProvider.when('/books', {templateUrl:'js/books/book-list.html', controller:'BookListCtrl'});
-  // $routeProvider.when('/wines', {templateUrl:'js/wines/wine-list.html', controller:'WineListCtrl'});
-  $routeProvider.when('/wines', {template: '<wines></wines>'});
-  $routeProvider.when('/books', {template: '<books></books>'});
-  $routeProvider.otherwise({redirectTo:'/wines'});
-
-    // // configure html5 to get links working on jsfiddle
-  $locationProvider.html5Mode(true);
-});
-
 
 /***/ })
 /******/ ]);
