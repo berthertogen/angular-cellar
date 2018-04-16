@@ -1,0 +1,32 @@
+{
+  "name": "angular-cellar",
+  "version": "1.0.0",
+  "description": "The Wine Cellar application is documented [here](http://coenraets.org).",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berthertogen/angular-cellar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berthertogen/angular-cellar/issues"
+  },
+  "homepage": "https://github.com/berthertogen/angular-cellar#readme",
+  "devDependencies": {
+    "angular": "^1.6.9",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  },
+  "dependencies": {
+    "angular-route": "^1.6.9"
+  }
+}

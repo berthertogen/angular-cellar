@@ -1,5 +1,6 @@
+'use strict';
 
-function WineListCtrl(Wine) {
+function WineListCtrl() {
     this.wines = [{
         id: 1,
         name: 'Test 1'
@@ -8,3 +9,5 @@ function WineListCtrl(Wine) {
         name: 'Test 2'
     }];
 }
+
+module.exports = WineListCtrl;

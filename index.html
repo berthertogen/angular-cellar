@@ -1,34 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:ng="http://angularjs.org">
 <head>
-<title>Angular Cellar</title>
-<link rel="stylesheet" href="css/styles.css" />
+    <title>Angular Cellar</title>
+    <script src="dist/vendor.js"></script>
+    <script src="dist/main.js"></script>
+    <base href="/"> 
 </head>
 
-<body ng:controller="RouteCtrl">
-
-<div id="header">
-    Angular Cellar
-    <button ng:click="addWine()">New Wine</button>
-    <a href='#/wines'>Wines</a>
-    <a href='#/books'>Books</a>
-</div>
-
-<div id="sidebar">
-    <ng:include src="'js/wines/wine-list.html'"></ng:include>
-</div>
-
-<div id="content">
-    <ng:view></ng:view>
-</div>
-
-<script src="lib/angular-0.9.19.min.js" ng:autobind></script>
-<script src="js/services.js"></script>
-<script src="js/routeCtrl.js"></script>
-<script src="js/wines/wineCtrl.js"></script>
-<script src="js/wines/wineDetailCtrl.js"></script>
-<script src="js/books/bookCtrl.js"></script>
-
-</body>
+    <body ng-app="angularUpgrade">
+        <a href="/wines">Wines</a>
+        <a href="/books">Books</a>
+        <div ng-view></div>
+    </body>
 
 </html>
