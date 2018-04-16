@@ -1,0 +1,7 @@
+<h1>Books</h1>
+
+<ul ng:controller="BookListCtrl">
+    <li ng:repeat="book in books">
+        <a href='#/book/{{ book.id }}'>{{ book.name }}</a>
+    </li>
+</ul>
